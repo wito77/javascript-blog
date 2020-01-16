@@ -1,5 +1,13 @@
 'use strict';
 
+const optArticleSelector = '.post',
+  optTitleSelector = '.post-title',
+  optTitleListSelector = '.titles',
+  optArticleTagsSelector = '.post-tags .list',
+  optArticleAuthorSelector = '.post-author',
+  // eslint-disable-next-line no-unused-vars
+  optTagsListSelector = '.tags .list';
+
 function titleClickHandler(event) {
   console.log('Link was clicked!');
   console.log(event);
@@ -31,13 +39,6 @@ function titleClickHandler(event) {
   targetArticle.classList.add('active');
   console.log('clickedElement:', targetArticle);
 }
-
-const optArticleSelector = '.post',
-  optTitleSelector = '.post-title',
-  optTitleListSelector = '.titles',
-  optArticleTagsSelector = '.post-tags .list',
-  optArticleAuthorSelector = '.post-author',
-  optTagsListSelector = '.tags .list';
 
 function generateTitleLinks(customSelector = '') {
   console.log('Titles was generated');
@@ -107,6 +108,7 @@ function generateTags() {
       html = html + linkHTML;
       console.log(html);
       /* [NEW] check if this link is NOT already in allTags */
+      // eslint-disable-next-line no-prototype-builtins
       if (!allTags.hasOwnProperty(tag)) {
         /* [NEW] add tag to allTags object */
         allTags[tag] = 1;
@@ -127,7 +129,7 @@ function generateTags() {
   /*[NEW] Start loop: for each tag in allTags: */
   for (let tag in allTags) {
     /*[NEW] generate code of a link and add it to allTagsHTML */
-    allTagsHTML += tag + ' (' + allTags[tag] + ') ';
+    allTagsHTML += '<li><a href="#tag-' + tag + '">' + tag + ' (' + allTags[tag] + ') </a></li>';
     /*[NEW] End loop */
   }
   /* [NEW] add html from allTagsHTML to tagList */
@@ -172,7 +174,7 @@ function tagClickHandler(event) {
 
 function addClickListenersToTags() {
   /* find all links to tags */
-  const tagLinks = document.querySelectorAll('.post-tags .list a');
+  const tagLinks = document.querySelectorAll('.post-tags .list a, .list.tags a');
   console.log(tagLinks);
   /* START LOOP: for each link */
   for (let tagLink of tagLinks) {
