@@ -4,6 +4,10 @@
 
 $color-light: #fff;
 $color-dark: #444;
+$background-color: rgb(44, 50, 61);
+$light-gray-color: rgba(185, 185, 185, 0.133);
+$link-color: rgba(216, 214, 214, 0.479);
+$link-color-hover: rgb(230, 230, 230);
 
 $font-logo: 'Sacramento',
 cursive;
@@ -11,6 +15,13 @@ $font-header: 'Oswald',
 sans-serif;
 $font-text: 'Source Sans Pro',
 sans-serif;
+
+$tag-fz1: 100%;
+$tag-fz2: 115%;
+$tag-fz3: 135%;
+$tag-fz4: 160%;
+$tag-fz5: 190%;
+$tag-fz6: 230%;
 
 /* Global */
 
@@ -21,9 +32,9 @@ sans-serif;
 }
 
 body {
-    background: $color-light;
+    background: $background-color;
     font-family: $font-text;
-    color: $color-dark;
+    color: $color-light;
     font-weight: 300;
     font-size: 16px;
     line-height: 1.7;
@@ -64,10 +75,10 @@ body {
 
 .sidebar,
 .posts {
-    background: $color-light;
+    background: $background-color;
     margin-right: 10px;
     padding: 40px;
-    border: 1px solid $color-dark;
+    border: 2px solid $light-gray-color;
     border-radius: 5px;
 }
 
@@ -79,6 +90,7 @@ body {
     font-size: 104px;
     line-height: 1;
     text-align: center;
+    color: $link-color-hover;
 }
 
 /* Lists */
@@ -87,6 +99,7 @@ body {
     list-style-type: none;
     margin: 0;
     padding: 0;
+
 
     .active {
         font-weight: bold;
@@ -99,11 +112,24 @@ body {
     }
 }
 
+.titles li a,
+.sidebar a {
+    color: $link-color;
+    text-decoration: none;
+}
+
+.titles li a:hover,
+.sidebar a:hover {
+    font-weight: bold;
+    color: $link-color-hover;
+}
+
 /* Authors */
 
 .authors {
     li {
         margin-bottom: 12px;
+        color: $link-color;
     }
 }
 
@@ -119,6 +145,12 @@ body {
 
 .post-author {
     font-style: italic;
+    color: $link-color;
+}
+
+.post-author a {
+    color: $link-color;
+    text-decoration: none;
 }
 
 .post-tags {
@@ -127,4 +159,45 @@ body {
     p {
         margin: 0 10px 0 0;
     }
+
+    a {
+        color: $link-color;
+        text-decoration: none;
+    }
+
+    a:hover {
+        font-weight: bold;
+        color: $link-color-hover;
+    }
+}
+
+/* Tags */
+
+.tags li {
+    display: inline-block;
+    line-height: normal;
+}
+
+.tag-size-1 {
+    font-size: $tag-fz1;
+}
+
+.tag-size-2 {
+    font-size: $tag-fz2;
+}
+
+.tag-size-3 {
+    font-size: $tag-fz3;
+}
+
+.tag-size-4 {
+    font-size: $tag-fz4;
+}
+
+.tag-size-5 {
+    font-size: $tag-fz5;
+}
+
+.tag-size-6 {
+    font-size: $tag-fz6;
 }

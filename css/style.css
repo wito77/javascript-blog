@@ -8,9 +8,9 @@
 }
 
 body {
-  background: #fff;
+  background: #2c323d;
   font-family: "Source Sans Pro", sans-serif;
-  color: #444;
+  color: #fff;
   font-weight: 300;
   font-size: 16px;
   line-height: 1.7;
@@ -53,10 +53,10 @@ body {
 
 .sidebar,
 .posts {
-  background: #fff;
+  background: #2c323d;
   margin-right: 10px;
   padding: 40px;
-  border: 1px solid #444;
+  border: 2px solid rgba(185, 185, 185, 0.133);
   border-radius: 5px;
 }
 
@@ -67,6 +67,7 @@ body {
   font-size: 104px;
   line-height: 1;
   text-align: center;
+  color: #e6e6e6;
 }
 
 /* Lists */
@@ -84,9 +85,22 @@ body {
   display: inline-block;
 }
 
+.titles li a,
+.sidebar a {
+  color: rgba(216, 214, 214, 0.479);
+  text-decoration: none;
+}
+
+.titles li a:hover,
+.sidebar a:hover {
+  font-weight: bold;
+  color: #e6e6e6;
+}
+
 /* Authors */
 .authors li {
   margin-bottom: 12px;
+  color: rgba(216, 214, 214, 0.479);
 }
 
 /* Post */
@@ -100,6 +114,12 @@ body {
 
 .post-author {
   font-style: italic;
+  color: rgba(216, 214, 214, 0.479);
+}
+
+.post-author a {
+  color: rgba(216, 214, 214, 0.479);
+  text-decoration: none;
 }
 
 .post-tags {
@@ -109,5 +129,45 @@ body {
 
 .post-tags p {
   margin: 0 10px 0 0;
+}
+
+.post-tags a {
+  color: rgba(216, 214, 214, 0.479);
+  text-decoration: none;
+}
+
+.post-tags a:hover {
+  font-weight: bold;
+  color: #e6e6e6;
+}
+
+/* Tags */
+.tags li {
+  display: inline-block;
+  line-height: normal;
+}
+
+.tag-size-1 {
+  font-size: 100%;
+}
+
+.tag-size-2 {
+  font-size: 115%;
+}
+
+.tag-size-3 {
+  font-size: 135%;
+}
+
+.tag-size-4 {
+  font-size: 160%;
+}
+
+.tag-size-5 {
+  font-size: 190%;
+}
+
+.tag-size-6 {
+  font-size: 230%;
 }
 /*# sourceMappingURL=style.css.map */
